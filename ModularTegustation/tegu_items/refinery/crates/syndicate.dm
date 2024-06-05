@@ -50,6 +50,9 @@
 		/obj/item/ego_weapon/city/rats/brick,
 		/obj/item/ego_weapon/city/rats/pipe,
 		/obj/item/ego_weapon/city/axegang,
+		/obj/item/ego_weapon/city/smiling_sword
+		/obj/item/ego_weapon/city/smiling_pipe
+		/obj/item/clothing/suit/armor/ego_gear/city/smiling,
 	)
 
 	rareloot =	list(
@@ -57,12 +60,14 @@
 		/obj/item/ego_weapon/city/axegang/leader,
 		/obj/item/ego_weapon/city/district23,
 		/obj/item/ego_weapon/city/district23/pierre,
+		/obj/item/clothing/suit/armor/ego_gear/city/smiling_smoker,
 	)
 
 	veryrareloot =	list(
 		/obj/item/ego_weapon/city/sweeper/hooksword,
 		/obj/item/ego_weapon/city/sweeper/sickle,
 		/obj/item/ego_weapon/city/sweeper/claw,
+		/obj/item/clothing/suit/armor/ego_gear/city/smiling_boss,
 	)
 
 //J-corp syndicate stuff, normally priced and most weapons are very gimmicky to use. Good for early game, bad for late. Has 1 more armor over weapons.

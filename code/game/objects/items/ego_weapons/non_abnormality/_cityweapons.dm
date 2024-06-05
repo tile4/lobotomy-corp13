@@ -150,6 +150,10 @@ Lock in place, giving yourself a big damage boost.
 Ting Tang
 Rolls damage every hit between 10% and max damage like dice weapons. Has slightly more max damage than its tier. Chances scale off of current sanity.
 
+Smiling Faces
+Pipe inflicts smoke, swords benefit from hitting people with smoke.
+
+
 			Everything else.
 
 Mirae Life Insurance
@@ -179,10 +183,6 @@ Upcoming Themes, if you work on these, move the line. Feel free to change them, 
 
 Brotherhood Of Iron
 Grade 6 weapons with grade 5 damage. Each of them has a durability that decreases on each hit, and when it reaches 0, all damage done is halved. Cannot repair
-
-Smiling Faces
-Build up charge on your blade, then hit a pipe with the blade for a gigantic burst of smoke.
-Without the charge, use the smoke pipe for an AOE of smoke
 
 T Corp
 Build Charge for a short timestop.

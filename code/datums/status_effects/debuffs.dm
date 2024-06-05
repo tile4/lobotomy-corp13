@@ -1208,3 +1208,10 @@
 		return
 	var/mob/living/carbon/human/status_holder = owner
 	status_holder.adjustSanityLoss(stacks * stacks)//sanity damage is the # of stacks squared
+
+//Smoke
+/datum/status_effect/smoke
+	id = "Smoke"
+	status_type = STATUS_EFFECT_UNIQUE
+	duration = 50
+	alert_type = null
