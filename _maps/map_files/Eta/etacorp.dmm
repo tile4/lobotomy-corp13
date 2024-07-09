@@ -4820,7 +4820,7 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/structure/kitchenspike,
+/obj/machinery/deepfryer,
 /turf/open/floor/plasteel/white,
 /area/facility_hallway/training)
 "vd" = (
@@ -5617,6 +5617,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/facility_hallway/information)
+"yw" = (
+/turf/open/space/basic,
+/area/space)
 "yx" = (
 /obj/effect/landmark/observer_start,
 /obj/effect/landmark/department_center,
@@ -9671,9 +9674,8 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/structure/table/reinforced{
-	max_integrity = 25
-	},
+/obj/structure/kitchenspike,
+/obj/structure/kitchenspike,
 /turf/open/floor/plasteel/white,
 /area/facility_hallway/training)
 "PO" = (
@@ -37392,9 +37394,9 @@ Mh
 Mh
 Mh
 Mh
-Mh
-Mh
-Mh
+yw
+yw
+yw
 Mh
 Mh
 Mh
@@ -37648,12 +37650,12 @@ Mh
 Mh
 Mh
 Mh
-Mh
-Mh
-Mh
-Mh
-Mh
-Mh
+yw
+yw
+yw
+yw
+yw
+yw
 Mh
 Mh
 Mh
@@ -37904,13 +37906,13 @@ Mh
 Mh
 Mh
 Mh
+yw
+yw
 Mh
 Mh
-Mh
-Mh
-Mh
-Mh
-Mh
+yw
+yw
+yw
 Mh
 Mh
 Mh
@@ -38161,12 +38163,12 @@ Mh
 Mh
 Mh
 Mh
+yw
+yw
 Mh
 Mh
-Mh
-Mh
-Mh
-Mh
+yw
+yw
 Mh
 Mh
 Mh
@@ -38418,13 +38420,13 @@ Mh
 Mh
 Mh
 Mh
+yw
+yw
 Mh
 Mh
-Mh
-Mh
-Mh
-Mh
-Mh
+yw
+yw
+yw
 Mh
 Mh
 Mh
@@ -38676,12 +38678,12 @@ Mh
 Mh
 Mh
 Mh
-Mh
-Mh
-Mh
-Mh
-Mh
-Mh
+yw
+yw
+yw
+yw
+yw
+yw
 Mh
 Mh
 Mh

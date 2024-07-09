@@ -924,6 +924,14 @@
 	name = "secure flooring"
 	},
 /area/facility_hallway/training)
+"eY" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/machinery/deepfryer,
+/turf/open/floor/plasteel/white,
+/area/facility_hallway/central)
 "eZ" = (
 /obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plasteel{
@@ -3571,6 +3579,13 @@
 /obj/machinery/telecomms/processor/preset_one,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/facility_hallway/training)
+"ra" = (
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/bar,
+/turf/open/floor/plasteel/white,
+/area/facility_hallway/central)
 "re" = (
 /obj/machinery/telecomms/server/presets/command{
 	name = "Command Server"
@@ -9521,6 +9536,15 @@
 "TC" = (
 /turf/open/floor/facility/halls,
 /area/facility_hallway/training)
+"TD" = (
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/closed/indestructible/reinforced{
+	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
+	name = "facility wall"
+	},
+/area/department_main/extraction)
 "TE" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
@@ -37717,7 +37741,7 @@ YK
 YK
 YK
 YK
-cc
+TD
 Hp
 ga
 tC
@@ -37974,7 +37998,7 @@ hE
 hE
 hE
 ip
-ip
+VL
 yy
 wQ
 Cc
@@ -37993,7 +38017,7 @@ cI
 ck
 ck
 ck
-Fw
+eY
 nO
 SK
 SK
@@ -38231,7 +38255,7 @@ OP
 pW
 hE
 ip
-ip
+VL
 VL
 LG
 cH
@@ -38249,8 +38273,8 @@ ck
 UB
 PU
 ck
-oz
-xf
+ck
+Fw
 nO
 SK
 SK
@@ -38488,7 +38512,7 @@ OP
 pW
 hE
 ip
-ip
+VL
 VL
 AK
 gV
@@ -38506,8 +38530,8 @@ ck
 sp
 aR
 ck
-oz
-aL
+ck
+ra
 nO
 SK
 SK
@@ -38745,7 +38769,7 @@ GP
 Ac
 hE
 ip
-ip
+VL
 VL
 wr
 cH
@@ -38764,7 +38788,7 @@ mi
 Ik
 ck
 oz
-aL
+xf
 nO
 nO
 nO
@@ -39002,7 +39026,7 @@ uX
 HP
 hE
 ip
-ip
+VL
 yy
 wQ
 Cc
@@ -39259,7 +39283,7 @@ hE
 hE
 hE
 ip
-ip
+VL
 yy
 mL
 ha

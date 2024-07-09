@@ -4946,6 +4946,14 @@
 /obj/effect/turf_decal/stripes/red/line,
 /turf/open/floor/facility/dark,
 /area/department_main/control)
+"oS" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/machinery/deepfryer,
+/turf/open/floor/plasteel/white,
+/area/facility_hallway/training)
 "oU" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
@@ -14525,6 +14533,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/facility_hallway/south)
+"RP" = (
+/turf/open/space/basic,
+/area/space)
 "RQ" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -25576,9 +25587,9 @@ pm
 pm
 pm
 pm
-pm
-pm
-pm
+RP
+RP
+RP
 pm
 pm
 pm
@@ -25832,12 +25843,12 @@ pm
 pm
 pm
 pm
-pm
-pm
-pm
-pm
-pm
-pm
+RP
+RP
+RP
+RP
+RP
+RP
 pm
 pm
 pm
@@ -26088,13 +26099,13 @@ pm
 pm
 pm
 pm
+RP
+RP
 pm
 pm
-pm
-pm
-pm
-pm
-pm
+RP
+RP
+RP
 pm
 pm
 pm
@@ -26345,12 +26356,12 @@ pm
 pm
 pm
 pm
+RP
+RP
 pm
 pm
-pm
-pm
-pm
-pm
+RP
+RP
 pm
 pm
 pm
@@ -26602,13 +26613,13 @@ pm
 pm
 pm
 pm
+RP
+RP
 pm
 pm
-pm
-pm
-pm
-pm
-pm
+RP
+RP
+RP
 pm
 pm
 pm
@@ -26860,12 +26871,12 @@ pm
 pm
 pm
 pm
-pm
-pm
-pm
-pm
-pm
-pm
+RP
+RP
+RP
+RP
+RP
+RP
 pm
 pm
 pm
@@ -42601,7 +42612,7 @@ TX
 xL
 FD
 vZ
-vZ
+oS
 vZ
 vZ
 qn
@@ -42858,7 +42869,7 @@ Xp
 xL
 Az
 vZ
-vZ
+oS
 vZ
 vZ
 qn
@@ -51817,7 +51828,7 @@ hp
 hp
 hp
 hp
-hp
+OJ
 BU
 lN
 ac
@@ -52074,7 +52085,7 @@ hp
 hp
 hp
 hp
-hp
+OJ
 BU
 ec
 cY
@@ -52331,7 +52342,7 @@ rg
 rg
 rg
 hp
-hp
+OJ
 BU
 of
 Vb
@@ -52588,7 +52599,7 @@ rg
 rg
 rg
 hp
-hp
+OJ
 BU
 Jh
 OJ
@@ -52845,7 +52856,7 @@ rg
 rg
 rg
 hp
-hp
+OJ
 OJ
 OJ
 xD
