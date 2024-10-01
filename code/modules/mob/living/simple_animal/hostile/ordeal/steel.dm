@@ -172,16 +172,6 @@
 		SLEEP_CHECK_DEATH(0.5)
 	charging = FALSE
 
-/mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/flying/proc/ClearSky(turf/T)
-	if(!T || isclosedturf(T) || T == loc)
-		return FALSE
-	if(locate(/obj/structure/window) in T.contents)
-		return FALSE
-	for(var/obj/machinery/door/D in T.contents)
-		if(D.density)
-			return FALSE
-	return TRUE
-
 /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/flying/proc/SweepAttack(mob/living/sweeptarget)
 	sweeptarget.visible_message(span_danger("[src] slams into [sweeptarget]!"), span_userdanger("[src] slams into you!"))
 	sweeptarget.apply_damage(30, RED_DAMAGE, null, run_armor_check(null, RED_DAMAGE))
@@ -251,6 +241,9 @@
 		/mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/flying = 2
 		)
 	AddComponent(/datum/component/ai_leadership, units_to_add, 8, TRUE, TRUE)
+
+	if(SSmaptype.maptype in SSmaptype.citymaps)
+		guaranteed_butcher_results += list(/obj/item/head_trophy/steel_head = 1)
 
 /mob/living/simple_animal/hostile/ordeal/steel_dusk/Life()
 	. = ..()
