@@ -23,6 +23,7 @@
 	stat_attack = DEAD
 	move_to_delay = 3
 	threat_level = WAW_LEVEL
+	fear_level = ALEPH_LEVEL
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	attack_verb_continuous = "stabs"
 	attack_verb_simple = "stab"
@@ -186,7 +187,8 @@
 	playsound(get_turf(src), 'sound/abnormalities/clownsmiling/announcedead.ogg', 75, 1)
 	for(var/mob/living/L in view(5, src))
 		if(!faction_check_mob(L))
-			L.deal_damage(50, RED_DAMAGE)
+			L.deal_damage(25, RED_DAMAGE)
+	new /obj/effect/particle_effect/foam in get_turf(src)
 	gib()
 
 //Clown picture-related code

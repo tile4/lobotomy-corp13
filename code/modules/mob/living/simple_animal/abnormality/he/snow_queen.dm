@@ -473,7 +473,7 @@
 	slash_cooldown_time = 2 SECONDS
 	//Drop all your weapons.
 	for(var/obj/item/E in hero.GetAllContents())
-		if(!istype(E, /obj/item/ego_weapon) && !istype(E, /obj/item/gun/ego_gun))
+		if(!is_ego_weapon(E))
 			continue
 		hero.dropItemToGround(E, TRUE, TRUE)
 	hero.forceMove(arena_landmarks[ICE_ARENA_HERO_SPAWN])
@@ -692,21 +692,6 @@
 	can_act = TRUE
 	icon_state = "snowqueen"
 	update_icon()
-
-//Used in Steel noons for if they are allowed to fly through something.
-/mob/living/simple_animal/hostile/abnormality/snow_queen/proc/ClearSky(turf/T)
-	if(!T || isclosedturf(T) || T == loc)
-		return FALSE
-	if(locate(/obj/structure/window) in T.contents)
-		return FALSE
-	if(locate(/obj/structure/table) in T.contents)
-		return FALSE
-	if(locate(/obj/structure/railing) in T.contents)
-		return FALSE
-	for(var/obj/machinery/door/D in T.contents)
-		if(D.density)
-			return FALSE
-	return TRUE
 
 		/*-------------------\
 		|REUSABLE VISUAL PROC|

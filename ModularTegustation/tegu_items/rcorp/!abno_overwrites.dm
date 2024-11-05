@@ -18,7 +18,7 @@
 //R-Corp cannot eat 180 white damage
 /mob/living/simple_animal/hostile/abnormality/alriune/Initialize()
 	if(IsCombatMap())
-		pulse_damage = 70
+		pulse_damage = 100
 	return ..()
 
 //Helper can't be stunned for a million fuckin years
@@ -66,4 +66,11 @@
 		melee_damage_upper = 25
 		jump_damage = 100
 		jump_aoe = 2
+	return ..()
+
+//Der Freischutz gets 233% more damage
+//This is to account for the fact his attack is highly choreographed and cannot pierce walls
+/mob/living/simple_animal/hostile/abnormality/der_freischutz/Initialize()
+	if(SSmaptype.maptype == "rcorp")
+		bullet_damage = 200
 	return ..()
