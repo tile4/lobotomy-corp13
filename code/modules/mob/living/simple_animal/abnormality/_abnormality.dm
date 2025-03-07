@@ -136,6 +136,9 @@
 	// rcorp stuff
 	var/rcorp_team
 
+	//LCL stuff
+	var/has_lclhands = TRUE
+
 /mob/living/simple_animal/hostile/abnormality/Initialize(mapload)
 	SHOULD_CALL_PARENT(TRUE)
 	. = ..()
@@ -173,10 +176,14 @@
 	if(secret_chance && (prob(1)))
 		InitializeSecretIcon()
 
-	//Abnormalities have no name here. And we don't want nonsentient ones to breach
+	//Abnormalities have no name here. And we don't want nonsentient ones to breach. This also allows most be able to grab stuff
 	if(SSmaptype.maptype == "limbus_labs")
 		name = "Limbus Company Specimen"
 		faction = list("neutral")
+		if(has_lclhands == TRUE)
+			dextrous = TRUE
+			held_items = list(null, null)
+			possible_a_intents = list(INTENT_HELP, INTENT_GRAB, INTENT_DISARM, INTENT_HARM)
 
 /mob/living/simple_animal/hostile/abnormality/proc/InitializeSecretIcon()
 	SHOULD_CALL_PARENT(TRUE) // if you ever need to override this proc, consider adding onto it instead or not using all the variables given
