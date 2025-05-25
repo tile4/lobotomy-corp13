@@ -14,7 +14,7 @@
 	. = ..()
 	if(SSmaptype.maptype == "limbus_labs")
 		health = 600
-		boom_damage = 80
+		boom_damage = 60
 
 /mob/living/simple_animal/hostile/abnormality/general_b/Initialize()
 	. = ..()
@@ -64,6 +64,10 @@
 	. = ..()
 	if(SSmaptype.maptype == "limbus_labs")
 		obj_damage = 11
+		var/datum/action/cooldown/friend_gift/gift = new()
+		gift.Grant(src)
+		var/datum/action/cooldown/galaxygiftbreak/antigift = new()
+		antigift.Grant(src)
 
 /mob/living/simple_animal/hostile/abnormality/schadenfreude/Life()//Hes just a little guy, let him schmoove a bit
 	. = ..()

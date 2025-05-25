@@ -1,4 +1,3 @@
-#define SHRIMP_COOLDOWN (3 SECONDS)
 //A tribute to, and Designed mostly by InsightfulParasite, our lovely spriter. Coded by Kirie Saito.
 /mob/living/simple_animal/hostile/abnormality/shrimp_exec
 	name = "Shrimp Association Executive"
@@ -110,29 +109,6 @@
 	attack_action_types = list(
 		/datum/action/cooldown/execdispese
 	)
-
-/datum/action/cooldown/execdispese
-	name = "Spawn S Corp Item or Mob"
-	icon_icon = 'icons/obj/drinks.dmi'
-	button_icon_state = "wellcheers_purple"
-	check_flags = AB_CHECK_CONSCIOUS
-	transparent_when_unavailable = TRUE
-	cooldown_time = SHRIMP_COOLDOWN //3 seconds
-
-/datum/action/cooldown/execdispense/Trigger()
-	if(!..())
-		return FALSE
-	if(!istype(owner, /mob/living/simple_animal/hostile/abnormality/shrimp_exec))
-		return FALSE
-	var/mob/living/simple_animal/hostile/abnormality/shrimp_exec/shrimp_exec = owner
-	StartCooldown()
-	shrimp_exec.choosespawn()
-	return TRUE
-
-/mob/living/simple_animal/hostile/abnormality/shrimp_exec/proc/choosespawn()
-	var/selected_choice = tgui_input_list(src, "What do you want to Spawn?", "Choose Item or Mob", dispenseitem)
-	new selected_choice(get_turf(src))
-	return
 
 /mob/living/simple_animal/hostile/abnormality/shrimp_exec/WorkChance(mob/living/carbon/human/user, chance)
 	if(happy)

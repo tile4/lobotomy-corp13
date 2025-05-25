@@ -177,6 +177,7 @@
 	if(SSmaptype.maptype == "limbus_labs")
 		name = "Limbus Company Specimen"
 		faction = list("neutral")
+		add_verb(src, /mob/living/simple_animal/hostile/abnormality/proc/ManualGift)
 
 /mob/living/simple_animal/hostile/abnormality/proc/InitializeSecretIcon()
 	SHOULD_CALL_PARENT(TRUE) // if you ever need to override this proc, consider adding onto it instead or not using all the variables given

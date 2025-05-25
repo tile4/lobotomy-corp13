@@ -148,6 +148,11 @@
 	realboy.physiology.black_mod *= 0.7
 	realboy.physiology.pale_mod *= 0.9
 	realboy.put_in_l_hand(new /obj/item/ego_weapon/marionette/abnormality(realboy))
+	realboy.gift_type = gift_type
+	if(SSmaptype.maptype == "limbus_labs")
+		add_verb(realboy, /mob/living/carbon/human/species/pinocchio/proc/PuppetGift)
+	var/datum/action/cooldown/give_weapon/recall = new()
+	recall.Grant(realboy)
 	ADD_TRAIT(realboy, TRAIT_COMBATFEAR_IMMUNE, "Abnormality")
 	ADD_TRAIT(realboy, TRAIT_WORK_FORBIDDEN, "Abnormality")
 	ADD_TRAIT(realboy, TRAIT_IGNOREDAMAGESLOWDOWN, "Abnormality")
@@ -265,6 +270,7 @@
 	race = /datum/species/puppet
 	faction = list("hostile")
 	var/core_enabled = FALSE
+	var/gift_type = null
 
 /mob/living/carbon/human/species/pinocchio/Initialize(mapload, cubespawned=FALSE, mob/spawner) //There is basically no documentation for bodyparts and hair, so this was the next best thing.
 	. = ..()
@@ -373,3 +379,21 @@
 	icon_state = "puppet_r_leg"
 	dismemberable = FALSE
 	can_be_disabled = FALSE
+
+
+/datum/action/cooldown/give_weapon
+	name = "Resummon Lyre"
+	check_flags = AB_CHECK_CONSCIOUS
+	transparent_when_unavailable = TRUE
+	cooldown_time = 5 SECONDS
+	icon_icon = 'ModularTegustation/icons/obj/ego_weapons.dmi'
+
+/datum/action/cooldown/give_weapon/Trigger()
+	. = ..()
+	if(!.)
+		return FALSE
+
+	var/mob/living/carbon/human/species/pinocchio/puppet = owner
+	if(!istype(puppet))
+		return FALSE
+	puppet.put_in_l_hand(new /obj/item/ego_weapon/marionette/abnormality(puppet))

@@ -4291,6 +4291,7 @@
 #include "ModularTegustation\tegu_items\limbus_labs\!abno_abilities.dm"
 #include "ModularTegustation\tegu_items\limbus_labs\!abno_overwrites.dm"
 #include "ModularTegustation\tegu_items\limbus_labs\!other_overwrites.dm"
+#include "ModularTegustation\tegu_items\limbus_labs\abnomality_verbs.dm"
 #include "ModularTegustation\tegu_items\limbus_labs\spawners.dm"
 #include "ModularTegustation\tegu_items\prosthetics\chainsword.dm"
 #include "ModularTegustation\tegu_items\prosthetics\explosivearm.dm"

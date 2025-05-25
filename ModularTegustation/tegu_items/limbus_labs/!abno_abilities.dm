@@ -1,15 +1,6 @@
 // The stuff that is mainly used in LCL
 
 //Galaxy Child
-/mob/living/simple_animal/hostile/abnormality/galaxy_child/PostSpawn()
-	. = ..()
-	datum_reference.qliphoth_meter = 1
-	if((SSmaptype.maptype == "limbus_labs"))
-		var/datum/action/cooldown/friend_gift/gift = new()
-		gift.Grant(src)
-		var/datum/action/cooldown/galaxygiftbreak/antigift = new()
-		antigift.Grant(src)
-
 /datum/action/cooldown/friend_gift
 	name = "Gift Pebble"
 	icon_icon = 'ModularTegustation/Teguicons/status_sprites.dmi'
@@ -144,9 +135,31 @@
 	if(!.)
 		return FALSE
 
-	var/mob/living/simple_animal/hostile/abnormality/mermaid/merm = owner
+	var/mob/living/simple_animal/hostile/abnormality/pisc_mermaid/merm = owner
 	if(!istype(merm))
 		return FALSE
-	if(!crown)
+	if(!merm.crown)
 		var/obj/item/clothing/head/unrequited_crown/UC = new(get_turf(src))
-		owner.crown = UC
+		merm.crown = UC
+
+//Shrimp Executive
+/datum/action/cooldown/execdispese
+	name = "Spawn S Corp Crate"
+	icon_icon = 'icons/obj/drinks.dmi'
+	button_icon_state = "wellcheers_purple"
+	check_flags = AB_CHECK_CONSCIOUS
+	transparent_when_unavailable = TRUE
+	cooldown_time = 60 SECONDS
+
+/datum/action/cooldown/execdispense/Trigger()
+	if(!..())
+		return FALSE
+	if(!istype(owner, /mob/living/simple_animal/hostile/abnormality/shrimp_exec))
+		return FALSE
+	StartCooldown()
+	var/obj/structure/closet/supplypod/extractionpod/pod = new()
+	pod.explosionSize = list(0,0,0,0)
+	new /obj/structure/lootcrate/s_corp(pod)
+	new /obj/effect/pod_landingzone(get_turf(owner), pod)
+	return TRUE
+

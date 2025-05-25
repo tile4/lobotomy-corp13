@@ -35,6 +35,7 @@ GLOBAL_LIST_INIT(high_security, list(
 	/mob/living/simple_animal/hostile/abnormality/nosferatu,
 	/mob/living/simple_animal/hostile/abnormality/sphinx,
 	/mob/living/simple_animal/hostile/abnormality/judgement_bird,
+	/mob/living/simple_animal/hostile/abnormality/shrimp_exec
 
 ))
 
