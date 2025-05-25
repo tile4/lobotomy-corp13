@@ -269,8 +269,9 @@
 /obj/machinery/body_fabricator/proc/ConstructTorso(biotype = 1)
 	playsound(get_turf(src), 'sound/machines/click.ogg', 10, TRUE)
 	var/mob/living/carbon/human/H = new /mob/living/carbon/human(src)
-	//YOU DIDNT PAY FOR LIMBS
-	RemoveAllLimbs(H)
+
+	if(SSmaptype.maptype != "limbus_labs") //YOU DIDNT PAY FOR LIMBS
+		RemoveAllLimbs(H)
 
 	//DNA TRANSFER GO!!!
 	if(slotted_brain)
@@ -316,6 +317,27 @@
 	var/refuse = H.get_bodypart(BODY_ZONE_CHEST)
 	robobody.replace_limb(H)
 	qdel(refuse)
+
+	if(SSmaptype.maptype == "limbus_labs")
+		var/obj/item/bodypart/head/robot/roboleftarm = new /obj/item/bodypart/l_arm/robot(src)
+		var/old_leftarm = H.get_bodypart(BODY_ZONE_L_ARM)
+		roboleftarm.replace_limb(H)
+		qdel(old_leftarm)
+
+		var/obj/item/bodypart/head/robot/roborightarm = new /obj/item/bodypart/r_arm/robot(src)
+		var/old_rightarm = H.get_bodypart(BODY_ZONE_R_ARM)
+		roborightarm.replace_limb(H)
+		qdel(old_rightarm)
+
+		var/obj/item/bodypart/head/robot/roboleftleg = new /obj/item/bodypart/l_leg/robot(src)
+		var/old_leftleg = H.get_bodypart(BODY_ZONE_L_LEG)
+		roboleftleg.replace_limb(H)
+		qdel(old_leftleg)
+
+		var/obj/item/bodypart/head/robot/roborightleg = new /obj/item/bodypart/r_leg/robot(src)
+		var/old_rightleg = H.get_bodypart(BODY_ZONE_R_LEG)
+		roborightleg.replace_limb(H)
+		qdel(old_rightleg)
 
 /obj/machinery/body_fabricator/proc/RemoveAllLimbs(mob/living/carbon/human/H)
 	var/static/list/zones = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)

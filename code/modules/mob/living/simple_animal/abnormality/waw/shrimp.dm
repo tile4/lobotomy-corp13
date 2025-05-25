@@ -1,3 +1,4 @@
+#define SHRIMP_COOLDOWN (3 SECONDS)
 //A tribute to, and Designed mostly by InsightfulParasite, our lovely spriter. Coded by Kirie Saito.
 /mob/living/simple_animal/hostile/abnormality/shrimp_exec
 	name = "Shrimp Association Executive"
@@ -7,7 +8,9 @@
 	icon_living = "executive"
 	core_icon = "shrimpexec_egg"
 	portrait = "shrimp_executive"
-	faction = list("neutral")
+	health = 1500
+	maxHealth = 1500
+	faction = list("neutral", "shrimp") //He is a shrimp after all
 	speak_emote = list("burbles")
 	threat_level = WAW_LEVEL
 	start_qliphoth = 1
@@ -20,6 +23,12 @@
 	work_damage_amount = 11
 	work_damage_type = WHITE_DAMAGE	//He insults you
 	chem_type = /datum/reagent/abnormality/sin/pride
+	//The melee comabt variables are really only used in Limbus Company Labs for flavor.
+	melee_damage_lower = 8
+	melee_damage_upper = 11
+	melee_damage_type = WHITE_DAMAGE
+	attack_verb_continuous = "criticizes"
+	attack_verb_simple = "criticizes"
 
 	ego_list = list(
 		/datum/ego_datum/weapon/executive,
@@ -98,6 +107,33 @@
 		/obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_white,
 	)
 
+	attack_action_types = list(
+		/datum/action/cooldown/execdispese
+	)
+
+/datum/action/cooldown/execdispese
+	name = "Spawn S Corp Item or Mob"
+	icon_icon = 'icons/obj/drinks.dmi'
+	button_icon_state = "wellcheers_purple"
+	check_flags = AB_CHECK_CONSCIOUS
+	transparent_when_unavailable = TRUE
+	cooldown_time = SHRIMP_COOLDOWN //3 seconds
+
+/datum/action/cooldown/execdispense/Trigger()
+	if(!..())
+		return FALSE
+	if(!istype(owner, /mob/living/simple_animal/hostile/abnormality/shrimp_exec))
+		return FALSE
+	var/mob/living/simple_animal/hostile/abnormality/shrimp_exec/shrimp_exec = owner
+	StartCooldown()
+	shrimp_exec.choosespawn()
+	return TRUE
+
+/mob/living/simple_animal/hostile/abnormality/shrimp_exec/proc/choosespawn()
+	var/selected_choice = tgui_input_list(src, "What do you want to Spawn?", "Choose Item or Mob", dispenseitem)
+	new selected_choice(get_turf(src))
+	return
+
 /mob/living/simple_animal/hostile/abnormality/shrimp_exec/WorkChance(mob/living/carbon/human/user, chance)
 	if(happy)
 		chance+=30
@@ -158,6 +194,8 @@
 
 //repeat lines
 /mob/living/simple_animal/hostile/abnormality/shrimp_exec/funpet()
+	if(IsCombatMap()) //You wouldn't need to repeat a line when likely not contained.
+		return
 	if(!liked)
 		return
 	if(hint_cooldown > world.time)
