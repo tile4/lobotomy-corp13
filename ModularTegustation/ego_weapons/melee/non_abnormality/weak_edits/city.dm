@@ -67,7 +67,7 @@
 	inhand_y_dimension = 64
 	hitsound = 'sound/weapons/fixer/generic/nail1.ogg'
 	attack_speed = 1.2
-	reach = 2
+	stuntime = 5
 
 /obj/item/ego_weapon/city/fakeindex/proxy/knife
 	name = "index dagger"
